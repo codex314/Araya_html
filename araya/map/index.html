@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araya Webgis</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/Custom-Checkbox.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/HoverDownButton.css">
+    <link rel="stylesheet" href="assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="assets/css/Right-Sidebar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Toggle-Switch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div>
+        <div class="header-blue" style="height:72px;background-size:auto;background-color:#4eba3a;">
+            <h1 class="text-center" style="color:rgb(255,255,255);">Fajar Surya Swadaya</h1>
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container"><a class="navbar-brand" href="#">Araya Bumi Indonesia</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                        class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:16px;font-family:Raleway, sans-serif;">Other Company</a>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                            </li>
+                        </ul>
+                        <form class="form-inline ml-auto" target="_self">
+                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
+                        </form>
+                </div>
+        </div>
+        </nav>
+    </div>
+    </div>
+    <div id="map">
+        <div style="width:auto;height:auto;"><iframe allowfullscreen="" frameborder="0" width="100%" height="100%" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBb2uXV-qXGjjIMIDhIb2mVA2PIk8Y14UU&amp;q=jakarta&amp;zoom=15" style="height:534px;position:absolute;"></iframe></div>
+        <div
+            style="margin:0px;">
+            <div id="content" class="content-normal"></div>
+            <div id="right-sidebar" class="right-sidebar-normal" style="background-color:rgba(179,163,241,0.22);color:rgba(244,248,252,0.08);height:auto;"><button class="btn btn-info btn-sm" type="button" id="collapse-right-sidebar" style="transition:all 0.8s ease;background-color:rgb(247,241,241);color:rgb(136,57,0);">&gt;&gt;</button>
+                <div><button class="btn btn-primary btn-block btn-sm" type="button" id="btn-landuse" style="background-color:rgb(209,228,247);color:rgb(0,0,0);font-size:20px;"><i class="fa fa-info"></i></button>
+                    <div id="cl-landuse" style="display:none;">
+                        <div class="table-responsive" style="background-color:#f8f8fa;color:rgba(244,248,252,0.96);">
+                            <table class="table">
+                                <thead style="background-color:#29ef09;color:rgba(5,5,5,0.96);">
+                                    <tr>
+                                        <th>Column 1</th>
+                                        <th>Column 1</th>
+                                        <th>Column 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="color:rgba(6,6,6,0.96);">
+                                    <tr>
+                                        <td>Cell 1</td>
+                                        <td>Cell 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cell 1</td>
+                                        <td>Cell 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cell 3</td>
+                                        <td>Cell 4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div><button class="btn btn-primary btn-block btn-sm" type="button" id="btn-layer" style="background-color:rgb(209,228,247);color:rgb(5,5,5);"><i class="material-icons">layers</i></button>
+                    <div id="cl-layer" style="display:none;">
+                        <div class="form-check" style="background-color:#fcf4f4;color:#0b0b0b;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">FSS</label></div>
+                        <div class="form-check" style="background-color:#f7f0f0;color:#0a0b0b;"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">RKT</label></div>
+                        <div class="form-check" style="background-color:#fcf7f7;color:#0f1010;"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">ROAD</label></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div>
+        <div class="btn-group-vertical my-auto" role="group" style="position:relative;top:350px;left:60px;">
+            <button class="btn btn-light" type="button" id="btnZoomIn" style="background-color:rgb(209,228,247);" title="ZOOM IN(+)">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button class="btn btn-light" type="button" id="btnZoomOut" style="background-color:rgb(209,228,247);" title="ZOOM OUT(-)">
+                <i class="fa fa-minus"></i>
+            </button>
+            <button class="btn btn-light" type="button" id="btnSearch" style="background-color:rgb(209,228,247);" title="SEARCH">
+                <i class="fa fa-search"></i>
+            </button>
+            <button class="btn btn-light" type="button" id="btnReset" style="background-color:rgb(209,228,247);" title="RESET">
+                <i class="material-icons">layers_clear</i>
+            </button>
+            
+        </div>
+    </div>
+    <div id="control-searchbox" class="control-searchbox">
+        <div id="searchBox" class="search-box"><span class="searching-kinds"><span id="featId" class="kind selected">FEAT ID</span><span id="speciesId" class="kind">Species</span></span>
+            <div id="featId-search" class="search featId selected"><input type="search" class="search-input" placeholder="E.g MTK0009"></div>
+            <div id="species-search" class="search species"><input type="search" class="search-input" placeholder="E.g HEVE, ACRA"></div>
+        </div>
+    </div>
+    </div>
+    <div id="hover" class="menuHov" style="margin:auto;">
+        <div class="ddHover" style="margin-top:-205px;margin-bottom:0px;margin-left:576px;"><div class="dropdown">
+  <button class="dropbtn">Compartment</button>
+  <div class="dropdown-content">
+    <input id="checkCom1" type="checkbox">
+      <label class="form-check-label" for="checkCom1">Test</label> <br>
+    <input id="checkCom2" type="checkbox">
+      <label class="form-check-label" for="checkCom2">Test</label> <br>
+    <input id="checkCom3" type="checkbox">
+      <label class="form-check-label" for="checkCom3">Test</label> 
+  </div>
+</div><div class="dropdown">
+  <button class="dropbtn">Species</button>
+  <div class="dropdown-content">
+     <input id="checkSpec1" type="checkbox">
+      <label class="form-check-label" for="checkSpec1">HEVE</label> <br>
+    <input id="checkSpec2" type="checkbox">
+      <label class="form-check-label" for="checkSpec2">AMAN</label> <br>
+    <input id="checkSpec3" type="checkbox">
+      <label class="form-check-label" for="checkSpec3">ACRA</label>
+  </div>
+</div></div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/Right-Sidebar.js"></script>
+</body>
+
+</html>
