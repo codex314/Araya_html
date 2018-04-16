@@ -1,0 +1,405 @@
+#Basic MAP information
+MAP
+    NAME "WMSServer"
+    IMAGETYPE PNG #default type file for image only PNG
+    EXTENT -180 -90 180 90 #number for world map
+    SIZE 600 300
+    IMAGECOLOR 255 255 255 #Default colour for RGB
+    FONTSET "assets/fonts/fonts.txt"  #For label 
+    SYMBOLSET "assets/fonts/symbols.sym"  #for point symbol such circle etc
+    UNITS dd  #projection unit
+    SHAPEPATH "\ms4w\apps\araya\map_old\shp"
+
+    WEB
+        IMAGEPATH "/ms4w/tmp/ms_tmp"
+        IMAGEURL "/ms_tmp/"
+        METADATA
+            "wms_title" "WMSServer"
+            "wms_onlineresource" "http://localhost/cgi.bin/mapserv.exe?map=/ms4w/apps/araya/araya_fss.map&" 
+            "wms_enable_request" "*"  
+            "ows_enable_request" "*"  
+            "wms_srs" "EPSG:4326 EPSG:900913"  
+            "wms_feature_info_mime_type" "text/html"
+        END
+    END
+    PROJECTION
+    "init=epsg:4326"
+    END
+
+    LAYER
+        NAME "ARAYAADM"
+        TEMPLATE "view/wms/feature_fss.html"  
+        METADATA
+            "wms_title" "ARAYAADM"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "FEATID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        DATA "fss_landuse.shp"
+        TYPE POLYGON
+        STATUS ON
+        DUMP TRUE
+        LABELITEM "NO_COMP"
+        PROJECTION
+            "init=epsg:32750"
+        END
+        # Dapat digunakan untuk memfilter species apa saja yang akan di munculkan
+        # FILTER ("[SPECIES]"='HEVE')
+        CLASS
+            NAME "ARAYAADM"
+            STYLE
+                COLOR 0 255 0
+                OUTLINECOLOR 18 140 18
+            END
+            LABEL
+                COLOR 0 0 0
+                ALIGN center
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END
+        END
+    END
+    # LAYER SEMUA TANAMAN KARET
+    LAYER
+        NAME "ARAYAADM_HEVE"
+        TEMPLATE "view/wms/feature_fss.html"  
+        METADATA
+            "wms_title" "ARAYAADM"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "FEATID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        DATA "fss_landuse.shp"
+        TYPE POLYGON
+        STATUS ON
+        DUMP TRUE
+        LABELITEM "NO_COMP"
+        PROJECTION
+            "init=epsg:32750"
+        END
+        # Dapat digunakan untuk memfilter species apa saja yang akan di munculkan
+        FILTER ("[SPECIES]"='HEVE')
+        CLASS
+            NAME "ARAYAADM_HEVE"
+            STYLE
+                COLOR 79 0 0
+                OUTLINECOLOR 18 140 18
+            END
+            LABEL
+                COLOR 0 0 0
+                ALIGN center
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END
+        END
+    END
+    # LAYER TANAMAN ACACIA MANGIUM
+     LAYER
+        NAME "ARAYAADM_AMAN"
+        TEMPLATE "view/wms/feature_fss.html"  
+        METADATA
+            "wms_title" "ARAYAADM"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "FEATID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        DATA "fss_landuse.shp"
+        TYPE POLYGON
+        STATUS ON
+        DUMP TRUE
+        LABELITEM "NO_COMP"
+        PROJECTION
+            "init=epsg:32750"
+        END
+        # Dapat digunakan untuk memfilter species apa saja yang akan di munculkan
+        FILTER ("[SPECIES]"='Acacia Mangium')
+        CLASS
+            NAME "ARAYAADM_AMAN"
+            STYLE
+                COLOR 255 0 0
+                OUTLINECOLOR 18 140 18
+            END
+            LABEL
+                COLOR 0 0 0
+                ALIGN center
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END
+        END
+    END
+    # LAYER TANAMAN EUCALIPTUS PELLITA
+     LAYER
+        NAME "ARAYAADM_EPEL"
+        TEMPLATE "view/wms/feature_fss.html"  
+        METADATA
+            "wms_title" "ARAYAADM"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "FEATID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        DATA "fss_landuse.shp"
+        TYPE POLYGON
+        STATUS ON
+        DUMP TRUE
+        LABELITEM "NO_COMP"
+        PROJECTION
+            "init=epsg:32750"
+        END
+        # Dapat digunakan untuk memfilter species apa saja yang akan di munculkan
+        FILTER ("[SPECIES]"='E. Pellita')
+        CLASS
+            NAME "ARAYAADM_EPEL"
+            STYLE
+                COLOR 100 66 100
+                OUTLINECOLOR 18 140 18
+            END
+            LABEL
+                COLOR 0 0 0
+                ALIGN center
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END
+        END
+    END
+    # LAYER TANAMAN ACACIUM CARPA
+    LAYER
+        NAME "ARAYAADM_ACRA"
+        TEMPLATE "view/wms/feature_fss.html"  
+        METADATA
+            "wms_title" "ARAYAADM"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "FEATID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        DATA "fss_landuse.shp"
+        TYPE POLYGON
+        STATUS ON
+        DUMP TRUE
+        LABELITEM "NO_COMP"
+        PROJECTION
+            "init=epsg:32750"
+        END
+        # Dapat digunakan untuk memfilter species apa saja yang akan di munculkan
+        FILTER ("[SPECIES]"='Acacia Carpa')
+        CLASS
+            NAME "ARAYAADM_ACRA"
+            STYLE
+                COLOR 150 66 0
+                OUTLINECOLOR 18 140 18
+            END
+            LABEL
+                COLOR 0 0 0
+                ALIGN center
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END
+        END
+    END
+
+
+    LAYER
+        NAME "fss_rkt2018"
+        TYPE POLYGON
+        DATA "FSS_RKT_2018.shp" 
+        TEMPLATE "view/wms/feature_fss_rkt2018.html"
+        LABELITEM "NO_COMP"
+        METADATA
+            "wms_title" "fss_rkt2018"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+        END  
+        PROJECTION
+            "init=epsg:32750"
+        END
+    
+        CLASS
+            NAME "fss_rkt2018"
+            STYLE
+                OUTLINECOLOR 11 107 163
+                COLOR 140 208 247
+            END
+            LABEL
+                COLOR 94 15 16
+                TYPE TRUETYPE
+                FONT "sans"
+                SIZE 8
+                ANTIALIAS TRUE
+                POSITION CC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpnt'
+                OFFSET 2 2
+            END 
+            END 
+        END
+    END
+
+    LAYER
+        NAME "fss_rubber_rkt2017"
+        TYPE POLYGON
+        DATA "petak_panen_karet_2017.shp" 
+        TEMPLATE "view/wms/feature_fss_rubber_rkt2017.html"
+        
+        METADATA
+            "wms_title" "fss_rubber_rkt2017"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+        END  
+
+        PROJECTION
+            "init=epsg:32750"
+        END
+    
+        CLASS
+            NAME "fss_rubber_rkt2017"
+            STYLE
+            OUTLINECOLOR 150 13 121
+            #COLOR 157 128 225
+            COLOR 247 195 236
+            END      
+        END
+    END
+
+    LAYER
+        NAME "fss_tebang_bayang_rkt_2017"
+        TYPE POLYGON
+        DATA "petak_tebang_bayang_rkt_2017.shp" 
+        TEMPLATE "view/wms/feature_fss_tebangbayang_rkt2017.html" 
+        METADATA
+            "wms_title" "fss_tebang_bayang_rkt_2017"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+        END  
+
+        PROJECTION
+            "init=epsg:32750"
+        END
+    
+        CLASS
+            NAME "fss_tebang_bayang_rkt_2017"
+            STYLE
+                OUTLINECOLOR 249 249 72
+                #COLOR 61 79 109
+                COLOR 227 11 206
+            END      
+        END
+    END
+
+    LAYER
+        NAME "fss_roads"
+        TYPE LINE
+        DATA "ROAD_FSS_2017.shp" 
+        TEMPLATE "view/wms/feature_fss_road.html"
+        LABELITEM "ROADID" 
+        METADATA
+            "wms_title" "fss_roads"
+            "gml_include_items" "all"
+            "wms_include_items" "all"
+            "wfs_featureid" "ROADID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+
+        PROJECTION
+            "init=epsg:32750"
+        END
+        
+        CLASS
+            NAME "fss_roads"
+            STYLE
+                OUTLINECOLOR 224 4 44
+                #COLOR 255 0 255
+                COLOR 226 170 170
+            END
+            LABEL
+                COLOR 255 0 0
+                TYPE TRUETYPE
+                ALIGN center
+                ANGLE AUTO
+                FONT "sans"
+                SIZE 5
+                ANTIALIAS TRUE
+                POSITION UC
+                PARTIALS FALSE
+                MAXSCALEDENOM 50000
+                MINDISTANCE 2
+                BUFFER 4
+            STYLE    # since to version 6
+                GEOMTRANSFORM 'labelpoly'
+                OFFSET 2 2
+            END 
+            END      
+        END
+    END
+
+    OUTPUTFORMAT
+        NAME "geojson"
+        DRIVER "OGR/GEOJSON"
+        MIMETYPE "application/json; subtype=geojson"
+        FORMATOPTION "STORAGE=stream"
+        FORMATOPTION "FORM=SIMPLE"
+    END
+
+END
